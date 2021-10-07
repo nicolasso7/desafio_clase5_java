@@ -1,42 +1,17 @@
-let precioCosto = parseFloat (prompt("Ingrese el precio del costo del parlante"));
-
-while (true){
-    if (!isNaN(precioCosto) && precioCosto != null &&
-    precioCosto !="") {
-        break;
-    } else{
-        alert("no es un numero")
-    }
-    continue;
-}
-//SALIDA
-precioCostoM = precioCosto.toFixed(2)
-alert("El Costo del parlante es: " + precioCostoM);
-console.log("El Costo del parlante es: " +precioCostoM);
-document.write ("<h2>El costo del parlante es: "+precioCostoM+"</h2>")
-
-// SUMAR EL IVA AL PRODUCTO
-function CalcularIva(precioCosto){
-    return (precioCosto * 0.21);
+function Cortina(tipo, tela, ancho, alto) 
+{
+    this.tipo = tipo;
+    this.tela  = tela;
+    this.ancho  = parseFloat(ancho);
+    this.alto = parseFloat(alto);
+    this.eleccionTipo = function(){ alert("Usted eligió una cortina tipo "+ this.tipo +" con tela "+ this.tela)}
 }
 
-let iva = CalcularIva(precioCosto);
-ivaM = iva.toFixed(2);
+let cortinaTipo = prompt("Ingrese tipo de cortina")
+let telaTipo = prompt ("Ingrese tela")
 
-alert("El IVA del parlante es: " + ivaM);
-console.log("El IVA del parlante es: " +ivaM);
-document.write ("<h2>El IVA del parlante es: "+ ivaM +"</h2>");
 
-// SUMAR COSTO + IVA
-
-function sumarIva(precioCosto){
-    return (precioCosto + precioCosto * 0.21);
-}
-
-let precioConIva = sumarIva (precioCosto);
-precioConIvaM = precioCostoIva.toFixed(2);
-
-alert("El parlante con IVA es: " + precioConIvaM);
-console.log("El parlante con IVA es: " + precioConIvaM);
-document.write ("<h2>El parlante con IVA es: " + 
-precioConIvaM + "</h2>");
+const cortina1 = new Cortina(cortinaTipo , telaTipo, 2.52, 1.95);
+const cortina2 = new Cortina("Roller", "Sunscreen", 2.10, 1.50);
+cortina1.eleccionTipo();
+cortina2.eleccionTipo();
